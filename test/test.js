@@ -1,17 +1,15 @@
 var code = require('../main');
 var expect = require('chai').expect;
 
+describe('Tax Calculator', function(){
 
-// describe defines a test suite. it defines a single test
-//
-// A suite takes a string that describes what a particular suite is testing.
-// 
-// A test takes a string that describes the function
-//
-// Test!
+  it('should tax 10% on the first $10', function() {
+    expect(code.calcTax(1)).to.equal(0.1);
+    expect(code.calcTax(10)).to.equal(1);
+  });
 
+  it('should tax 7% on the second $10', function(){
+    expect(code.calcTax(15)).to.equal(1.35);
+  });
 
-
-describe("Hello World", function() {
-  it("should say 'Hello, World!' when ran");
 });
